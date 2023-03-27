@@ -68,9 +68,13 @@ public class Person {
         if (otherPerson == this) {
             return true;
         }
+        boolean hasSameName = otherPerson.getName().equals(getName());
+        boolean hasSameAge = otherPerson.getAge().equals(getAge());
+        boolean hasSamePostal = otherPerson.getPostal().equals(getPostal());
 
+        boolean isSame = hasSameAge && hasSameName && hasSamePostal;
         return otherPerson != null
-                && otherPerson.getName().equals(getName());
+                && isSame;
     }
 
     /**
