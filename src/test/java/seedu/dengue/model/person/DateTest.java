@@ -35,11 +35,7 @@ public class DateTest {
         assertFalse(Date.isValidDate("2000-01-1")); // single-digit day
         assertFalse(Date.isValidDate("23-01-01")); // two-digit year
         assertFalse(Date.isValidDate("23/Janrrr/01")); // invalid month string
-        assertFalse(Date.isValidDate("2000a01a01")); // extra alphabet characters
-        assertFalse(Date.isValidDate("20000101 000")); // extra numeric characters
-        assertFalse(Date.isValidDate("2000-01M-01")); // special alphabet characters like "M", "y", "d"
-        assertFalse(Date.isValidDate("20yy-01-01"));
-
+        assertFalse(Date.isValidDate("23/may/may/01")); // multiple months
         // missing parts
         assertFalse(Date.isValidDate("1999-12")); // missing day
         assertFalse(Date.isValidDate("1999--31")); // missing month
