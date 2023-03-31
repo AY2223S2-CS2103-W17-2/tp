@@ -1,4 +1,4 @@
-package seedu.dengue.model.predicate;
+package seedu.dengue.logic.predicates;
 
 import java.util.Optional;
 import java.util.function.Predicate;

@@ -1,14 +1,14 @@
-package seedu.dengue.model.predicate;
+package seedu.dengue.logic.predicates;
 
 import java.util.Optional;
 import java.util.Set;
 
+import seedu.dengue.logic.range.Range;
 import seedu.dengue.model.person.Age;
 import seedu.dengue.model.person.Date;
 import seedu.dengue.model.person.Name;
 import seedu.dengue.model.person.Person;
 import seedu.dengue.model.person.SubPostal;
-import seedu.dengue.model.range.Range;
 import seedu.dengue.model.variant.Variant;
 
 /**

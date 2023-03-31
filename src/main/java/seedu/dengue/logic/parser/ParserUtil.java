@@ -12,12 +12,12 @@ import java.util.Set;
 import seedu.dengue.commons.core.index.Index;
 import seedu.dengue.commons.util.StringUtil;
 import seedu.dengue.logic.parser.exceptions.ParseException;
+import seedu.dengue.logic.predicates.PredicateUtil;
 import seedu.dengue.model.person.Age;
 import seedu.dengue.model.person.Date;
 import seedu.dengue.model.person.Name;
 import seedu.dengue.model.person.Postal;
 import seedu.dengue.model.person.SubPostal;
-import seedu.dengue.model.predicate.PredicateUtil;
 import seedu.dengue.model.variant.Variant;
 
 /**
@@ -98,7 +98,7 @@ public class ParserUtil {
     }
 
     /**
-     * Parses a {@code String date} into an {@code Date}.
+     * Parses a {@code String date} into a {@code Date}.
      * Leading and trailing whitespaces will be trimmed.
      *
      * @throws ParseException if the given {@code date} is invalid.

@@ -1,4 +1,4 @@
-package seedu.dengue.model.range;
+package seedu.dengue.logic.range;
 
 import java.time.LocalDate;
 import java.util.Optional;
@@ -33,7 +33,7 @@ public class StartDate implements Start<Date> {
         }
         LocalDate d1 = LocalDate.parse(date.get().value);
         LocalDate d2 = LocalDate.parse(p.getDate().value);
-        return d1.compareTo(d2) <= 0;
+        return !d1.isAfter(d2);
     }
 
     /**
@@ -47,7 +47,7 @@ public class StartDate implements Start<Date> {
         }
         LocalDate d1 = LocalDate.parse(date.get().value);
         LocalDate d2 = LocalDate.parse(end.date.get().value);
-        return d1.compareTo(d2) <= 0;
+        return !d1.isAfter(d2);
     }
 
     public Date get() {

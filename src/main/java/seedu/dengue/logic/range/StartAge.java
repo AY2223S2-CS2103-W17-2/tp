@@ -1,4 +1,4 @@
-package seedu.dengue.model.range;
+package seedu.dengue.logic.range;
 
 import java.util.Optional;
 

@@ -1,4 +1,4 @@
-package seedu.dengue.model.predicate;
+package seedu.dengue.logic.predicates;
 
 import static java.util.Objects.requireNonNull;
 

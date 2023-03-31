@@ -14,12 +14,12 @@ import java.util.stream.Collectors;
 import seedu.dengue.commons.core.Messages;
 import seedu.dengue.commons.core.index.Index;
 import seedu.dengue.logic.commands.exceptions.CommandException;
+import seedu.dengue.logic.predicates.PersonContainsDatePredicate;
+import seedu.dengue.logic.predicates.RangeContainsPersonPredicate;
+import seedu.dengue.logic.range.Range;
 import seedu.dengue.model.Model;
 import seedu.dengue.model.person.Date;
 import seedu.dengue.model.person.Person;
-import seedu.dengue.model.predicate.PersonContainsDatePredicate;
-import seedu.dengue.model.predicate.RangeContainsPersonPredicate;
-import seedu.dengue.model.range.Range;
 
 /**
  * Deletes a person identified using its displayed index from the Dengue Hotspot Tracker.
@@ -65,7 +65,7 @@ public class DeleteCommand extends Command {
      * @param targetIndex
      */
     public DeleteCommand(Index targetIndex) {
-        this.targetIndexes = Optional.of(List.<Index>of(targetIndex));
+        this.targetIndexes = Optional.of(List.of(targetIndex));
         this.date = Optional.empty();
         this.range = Optional.empty();
     }

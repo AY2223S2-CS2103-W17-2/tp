@@ -19,16 +19,16 @@ import java.util.stream.Stream;
 import seedu.dengue.logic.commands.AddCommand;
 import seedu.dengue.logic.commands.FindCommand;
 import seedu.dengue.logic.parser.exceptions.ParseException;
+import seedu.dengue.logic.predicates.FindPredicate;
+import seedu.dengue.logic.range.EndAge;
+import seedu.dengue.logic.range.EndDate;
+import seedu.dengue.logic.range.Range;
+import seedu.dengue.logic.range.StartAge;
+import seedu.dengue.logic.range.StartDate;
 import seedu.dengue.model.person.Age;
 import seedu.dengue.model.person.Date;
 import seedu.dengue.model.person.Name;
 import seedu.dengue.model.person.SubPostal;
-import seedu.dengue.model.predicate.FindPredicate;
-import seedu.dengue.model.range.EndAge;
-import seedu.dengue.model.range.EndDate;
-import seedu.dengue.model.range.Range;
-import seedu.dengue.model.range.StartAge;
-import seedu.dengue.model.range.StartDate;
 import seedu.dengue.model.variant.Variant;
 
 /**
@@ -75,7 +75,7 @@ public class FindCommandParser implements Parser<FindCommand> {
         if (!startDate.isBefore(endDate)) {
             throw new ParseException(MESSAGE_INVALID_RANGE);
         }
-        return new Range<Date>(startDate, endDate);
+        return new Range<>(startDate, endDate);
     }
 
     private static Range<Age> getAgeRange(ArgumentMultimap argumentMultimap) throws ParseException {
@@ -86,8 +86,9 @@ public class FindCommandParser implements Parser<FindCommand> {
         if (!startAge.isBefore(endAge)) {
             throw new ParseException(MESSAGE_INVALID_RANGE);
         }
-        return new Range<Age>(startAge, endAge);
+        return new Range<>(startAge, endAge);
     }
+
     /**
      * Returns true if at least one of the prefixes contains non-empty {@code Optional} value in the given
      * {@code ArgumentMultimap}.

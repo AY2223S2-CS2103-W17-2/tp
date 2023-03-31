@@ -15,6 +15,12 @@ import seedu.dengue.logic.comparators.PersonAgeComparator;
 import seedu.dengue.logic.comparators.PersonDateComparator;
 import seedu.dengue.logic.comparators.PersonNameComparator;
 import seedu.dengue.logic.comparators.PersonPostalComparator;
+import seedu.dengue.logic.predicates.FindPredicate;
+import seedu.dengue.logic.range.EndAge;
+import seedu.dengue.logic.range.EndDate;
+import seedu.dengue.logic.range.Range;
+import seedu.dengue.logic.range.StartAge;
+import seedu.dengue.logic.range.StartDate;
 import seedu.dengue.model.Model;
 import seedu.dengue.model.ModelManager;
 import seedu.dengue.model.UserPrefs;
@@ -23,12 +29,6 @@ import seedu.dengue.model.person.Date;
 import seedu.dengue.model.person.Name;
 import seedu.dengue.model.person.Person;
 import seedu.dengue.model.person.SubPostal;
-import seedu.dengue.model.predicate.FindPredicate;
-import seedu.dengue.model.range.EndAge;
-import seedu.dengue.model.range.EndDate;
-import seedu.dengue.model.range.Range;
-import seedu.dengue.model.range.StartAge;
-import seedu.dengue.model.range.StartDate;
 import seedu.dengue.model.variant.Variant;
 
 /**
@@ -140,8 +140,8 @@ public class SortCommandTest {
         Optional<Age> emptyAge = Optional.empty();
         Optional<Date> emptyDate = Optional.empty();
         Set<Variant> emptyVariants = new HashSet<>();
-        Range<Date> emptyDateRange = new Range<Date>(new StartDate(emptyDate), new EndDate(emptyDate));
-        Range<Age> emptyAgeRange = new Range<Age>(new StartAge(emptyAge), new EndAge(emptyAge));
+        Range<Date> emptyDateRange = new Range<>(new StartDate(emptyDate), new EndDate(emptyDate));
+        Range<Age> emptyAgeRange = new Range<>(new StartAge(emptyAge), new EndAge(emptyAge));
         FindPredicate predicate = new FindPredicate(
                 testName, emptySubPostal, emptyAge, emptyDate, emptyVariants, emptyDateRange, emptyAgeRange);
         model.updateFilteredPersonList(predicate);

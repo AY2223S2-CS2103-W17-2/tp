@@ -12,8 +12,8 @@ import static seedu.dengue.logic.parser.CliSyntax.PREFIX_STARTDATE;
 import static seedu.dengue.logic.parser.CliSyntax.PREFIX_VARIANT;
 
 import seedu.dengue.commons.core.Messages;
+import seedu.dengue.logic.predicates.FindPredicate;
 import seedu.dengue.model.Model;
-import seedu.dengue.model.predicate.FindPredicate;
 
 /**
  * Finds and lists all persons in Dengue Hotspot Tracker whose name contains any of the argument keywords.

@@ -16,7 +16,12 @@ import java.util.Set;
 
 import org.junit.jupiter.api.Test;
 
-import seedu.dengue.logic.parser.exceptions.ParseException;
+import seedu.dengue.logic.predicates.FindPredicate;
+import seedu.dengue.logic.range.EndAge;
+import seedu.dengue.logic.range.EndDate;
+import seedu.dengue.logic.range.Range;
+import seedu.dengue.logic.range.StartAge;
+import seedu.dengue.logic.range.StartDate;
 import seedu.dengue.model.Model;
 import seedu.dengue.model.ModelManager;
 import seedu.dengue.model.UserPrefs;
@@ -24,12 +29,6 @@ import seedu.dengue.model.person.Age;
 import seedu.dengue.model.person.Date;
 import seedu.dengue.model.person.Name;
 import seedu.dengue.model.person.SubPostal;
-import seedu.dengue.model.predicate.FindPredicate;
-import seedu.dengue.model.range.EndAge;
-import seedu.dengue.model.range.EndDate;
-import seedu.dengue.model.range.Range;
-import seedu.dengue.model.range.StartAge;
-import seedu.dengue.model.range.StartDate;
 import seedu.dengue.model.variant.Variant;
 
 /**
@@ -40,15 +39,15 @@ public class FindCommandTest {
     private Model expectedModel = new ModelManager(getTypicalDengueHotspotTracker(), new UserPrefs());
 
     @Test
-    public void execute_oneKeywords_noPersonFound() throws ParseException {
+    public void execute_oneKeywords_noPersonFound() {
         String expectedMessage = String.format(MESSAGE_PERSONS_LISTED_OVERVIEW, 0);
         Optional<SubPostal> emptySubPostal = Optional.empty();
         Optional<Name> testName = Optional.of(new Name("abcdefghijklmnop"));
         Optional<Age> emptyAge = Optional.empty();
         Optional<Date> emptyDate = Optional.empty();
         Set<Variant> emptyVariants = new HashSet<>();
-        Range<Date> emptyDateRange = new Range<Date>(new StartDate(emptyDate), new EndDate(emptyDate));
-        Range<Age> emptyAgeRange = new Range<Age>(new StartAge(emptyAge), new EndAge(emptyAge));
+        Range<Date> emptyDateRange = new Range<>(new StartDate(emptyDate), new EndDate(emptyDate));
+        Range<Age> emptyAgeRange = new Range<>(new StartAge(emptyAge), new EndAge(emptyAge));
         FindPredicate predicate = new FindPredicate(
                 testName, emptySubPostal, emptyAge, emptyDate, emptyVariants, emptyDateRange, emptyAgeRange);
         FindCommand command = new FindCommand(predicate);

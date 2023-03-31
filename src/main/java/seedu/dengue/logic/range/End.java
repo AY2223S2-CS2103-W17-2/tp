@@ -1,4 +1,4 @@
-package seedu.dengue.model.range;
+package seedu.dengue.logic.range;
 
 import seedu.dengue.model.person.Person;
 
@@ -6,6 +6,6 @@ import seedu.dengue.model.person.Person;
  * Represents the end of a given range
  */
 public interface End<T> {
-    public boolean isAfter(Person p);
-    public T get();
+    boolean isAfter(Person p);
+    T get();
 }

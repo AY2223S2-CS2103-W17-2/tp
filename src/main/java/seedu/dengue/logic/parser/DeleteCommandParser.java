@@ -13,10 +13,10 @@ import java.util.Optional;
 import seedu.dengue.commons.core.index.Index;
 import seedu.dengue.logic.commands.DeleteCommand;
 import seedu.dengue.logic.parser.exceptions.ParseException;
+import seedu.dengue.logic.range.EndDate;
+import seedu.dengue.logic.range.Range;
+import seedu.dengue.logic.range.StartDate;
 import seedu.dengue.model.person.Date;
-import seedu.dengue.model.range.EndDate;
-import seedu.dengue.model.range.Range;
-import seedu.dengue.model.range.StartDate;
 
 /**
  * Parses input arguments and creates a new DeleteCommand object

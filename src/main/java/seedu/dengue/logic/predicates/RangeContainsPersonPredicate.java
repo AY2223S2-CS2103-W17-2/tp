@@ -1,7 +1,7 @@
-package seedu.dengue.model.predicate;
+package seedu.dengue.logic.predicates;
 
+import seedu.dengue.logic.range.Range;
 import seedu.dengue.model.person.Person;
-import seedu.dengue.model.range.Range;
 
 /**
  * Represents the predicate which tests for whether the person in the persons list is reported on the
