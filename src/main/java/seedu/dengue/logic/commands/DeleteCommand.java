@@ -130,7 +130,6 @@ public class DeleteCommand extends Command {
         return new CommandResult(String.format(MESSAGE_DELETE_INDEX_SUCCESS, indexes.size()));
     }
 
-
     private CommandResult executeDate(Model model, List<Person> lastShownList) {
         assert date.isPresent();
         List<Person> referenceCopy = new ArrayList<>(lastShownList);

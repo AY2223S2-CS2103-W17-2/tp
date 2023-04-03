@@ -108,7 +108,6 @@ public class Date implements ContinuousData {
         }
 
         DateTimeFormatterBuilder builder = new DateTimeFormatterBuilder();
-        builder = builder.parseCaseInsensitive();
         builder.parseCaseInsensitive();
         builder.appendPattern(dateString);
 
