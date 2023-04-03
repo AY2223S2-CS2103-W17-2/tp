@@ -16,6 +16,7 @@ import seedu.dengue.logic.parser.exceptions.ParseException;
 import seedu.dengue.logic.range.EndDate;
 import seedu.dengue.logic.range.Range;
 import seedu.dengue.logic.range.StartDate;
+import seedu.dengue.model.person.ContinuousData;
 import seedu.dengue.model.person.Date;
 
 /**
@@ -74,7 +75,7 @@ public class DeleteCommandParser implements Parser<DeleteCommand> {
                 if (!startDate.isBefore(endDate)) {
                     throw new ParseException(MESSAGE_INVALID_RANGE);
                 }
-                Range<Date> range = new Range<>(startDate, endDate);
+                Range<Date> range = ContinuousData.generateRange(startDate, endDate);
                 return new DeleteCommand(range);
             }
         } catch (ParseException pe) {

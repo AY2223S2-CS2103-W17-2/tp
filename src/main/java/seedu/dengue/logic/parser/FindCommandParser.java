@@ -26,6 +26,7 @@ import seedu.dengue.logic.range.Range;
 import seedu.dengue.logic.range.StartAge;
 import seedu.dengue.logic.range.StartDate;
 import seedu.dengue.model.person.Age;
+import seedu.dengue.model.person.ContinuousData;
 import seedu.dengue.model.person.Date;
 import seedu.dengue.model.person.Name;
 import seedu.dengue.model.person.SubPostal;
@@ -75,7 +76,7 @@ public class FindCommandParser implements Parser<FindCommand> {
         if (!startDate.isBefore(endDate)) {
             throw new ParseException(MESSAGE_INVALID_RANGE);
         }
-        return new Range<>(startDate, endDate);
+        return ContinuousData.generateRange(startDate, endDate);
     }
 
     private static Range<Age> getAgeRange(ArgumentMultimap argumentMultimap) throws ParseException {
@@ -86,7 +87,7 @@ public class FindCommandParser implements Parser<FindCommand> {
         if (!startAge.isBefore(endAge)) {
             throw new ParseException(MESSAGE_INVALID_RANGE);
         }
-        return new Range<>(startAge, endAge);
+        return ContinuousData.generateRange(startAge, endAge);
     }
 
     /**

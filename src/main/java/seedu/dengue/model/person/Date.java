@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
  * Represents a Person's dengue case date in the Dengue Hotspot Tracker.
  * Guarantees: immutable; is valid as declared in {@link #isValidDate(String)}
  */
-public class Date {
+public class Date implements ContinuousData {
 
     public static final String MESSAGE_CONSTRAINTS = "Dates should adhere to the following constraints:\n"
             + "1. Dates to contain 4-digit years YYYY, 2-digit days dd and either 2-digit months MM,"
@@ -60,9 +60,7 @@ public class Date {
     public static boolean isValidDate(String test) {
         try {
             LocalDate.parse(test, produceValidationFormat(test));
-        } catch (DateTimeParseException e) {
-            return false;
-        } catch (IllegalArgumentException err) {
+        } catch (DateTimeParseException | IllegalArgumentException e) {
             return false;
         }
         return true;
@@ -114,10 +112,8 @@ public class Date {
         builder.parseCaseInsensitive();
         builder.appendPattern(dateString);
 
-        DateTimeFormatter format = builder.toFormatter()
+        return builder.toFormatter()
                 .withResolverStyle(ResolverStyle.STRICT);
-
-        return format;
     }
 
     @Override
